@@ -1,0 +1,15 @@
+{
+  "Culture": "en",
+  "Texts": {
+    "AppName": "TodoApp",
+    "Menu:Home": "Home",
+    "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information visit",
+    "Welcome": "Welcome",
+    "TodoItem:001": "There is already an todoItem with the same text: '{text}'",
+    "Permission:TodoItem": "Todo Item",
+    "Permission:TodoItems": "Dashport",
+    "Permission:TodoItems.Create": "Created",
+    "Permission:TodoItems.Edit": "Edited",
+    "Permission:TodoItems.Delete": "Deleted"
+  }
+}

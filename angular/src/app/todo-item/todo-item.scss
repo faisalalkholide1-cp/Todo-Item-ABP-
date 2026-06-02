@@ -1,0 +1,130 @@
+.todo-container {
+  max-width: 580px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.todo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+
+  h2 {
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0;
+  }
+}
+
+.todo-badge {
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 99px;
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  color: #666;
+}
+
+.add-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+
+  input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+
+    &:focus {
+      border-color: #999;
+    }
+  }
+}
+
+.btn-add {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: transparent;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &:hover { background: #f5f5f5; }
+  &:active { transform: scale(0.98); }
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  background: #fff;
+  transition: border-color 0.15s;
+
+  &:hover { border-color: #ccc; }
+}
+
+.item-text {
+  flex: 1;
+  font-size: 14px;
+}
+
+.edit-input {
+  flex: 1;
+  padding: 4px 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+
+  &:focus { border-color: #999; }
+}
+
+.actions {
+  display: flex;
+  gap: 4px;
+  color: #666;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 6px;
+  color: #100707;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  transition: all 0.15s;
+
+  &:hover { background: #f5f5f5; color: #333; }
+  &.danger:hover { background: #fff0f0; color: #e53e3e; }
+  &.success:hover { background: #f0fff4; color: #38a169; }
+  &.cancel:hover { background: #f5f5f5; color: #666; }
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2.5rem 0;
+  color: #bbb;
+
+  i { font-size: 32px; display: block; margin-bottom: 10px; }
+  p { margin: 0; font-size: 14px; }
+}

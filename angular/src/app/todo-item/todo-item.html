@@ -1,0 +1,66 @@
+<div class="todo-container">
+
+  <div class="todo-header">
+    <h2>قائمة المهام</h2>
+    <span class="todo-badge">{{ todoItems.length }} مهام</span>
+  </div>
+
+  <div class="add-row" >
+    <input
+      type="text"
+      [(ngModel)]="newTodoText"
+      (keydown.enter)="create()"
+      placeholder="أدخل مهمة جديدة..."
+    />
+    <button  class="btn-add" (click)="create()">
+      <i class="ti ti-plus"></i> إضافة
+    </button>
+  </div>
+
+  <div class="todo-list">
+
+    <div class="todo-item" *ngFor="let item of todoItems">
+
+      <ng-container *ngIf="editingId !== item.id; else editMode">
+        <span class="item-text">{{ item.text }}</span>
+        <div class="actions">
+          <button class="icon-btn"  (click)="startEdit(item)" title="تعديل">
+            <i class="ti ti-edit"></i>
+            Edit
+          </button>
+          <button class="icon-btn danger"  (click)="delete(item.id)" title="حذف">
+            <i class="ti ti-trash"></i>
+            Delete
+          </button>
+        </div>
+      </ng-container>
+
+      <ng-template #editMode>
+        <input
+          type="text"
+          class="edit-input"
+          [(ngModel)]="editingText"
+          (keydown.enter)="confirmEdit(item.id)"
+          (keydown.escape)="cancelEdit()"
+        />
+        <div class="actions">
+          <button class="icon-btn success" (click)="confirmEdit(item.id)" title="حفظ">
+            <i class="ti ti-check"></i>
+            Save
+          </button>
+          <button class="icon-btn cancel" (click)="cancelEdit()" title="إلغاء">
+            <i class="ti ti-x"></i>
+            Cancel
+          </button>
+        </div>
+      </ng-template>
+
+    </div>
+
+    <div class="empty-state" *ngIf="todoItems.length === 0">
+      <i class="ti ti-checklist"></i>
+      <p>لا توجد مهام</p>
+    </div>
+
+  </div>
+</div>
